@@ -4,6 +4,7 @@ import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import { useDispatch } from 'react-redux';
 import { setCameraImage } from './features/features/cameraSlice';
 import { useHistory } from 'react-router-dom';
+import './WebcamCapture.css';
 
 const videoConstraints = {
     width: 250,
@@ -21,7 +22,7 @@ function WebcamCapture() {
         dispatch(setCameraImage(imageSrc));
         history.push("preview");
 
-    }, [webcamRef])
+    }, [webcamRef, dispatch, history])
 
     return <div className="webcamCapture">
         <Webcam
